@@ -1,0 +1,1 @@
+{"name":"Local: searchingMatrix","url":"d:\\Placement C++\\DSA\\Arrays\\searchingMatrix.cpp","tests":[{"id":1609742859602,"input":"3 3\n1 2 3 5\n1 4 5 7 \n8 0 9 1 ","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Placement C++\\DSA\\Arrays\\searchingMatrix.cpp","group":"local","local":true}
