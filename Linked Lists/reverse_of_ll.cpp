@@ -1,0 +1,67 @@
+#include<iostream>
+using namespace std;
+
+
+class Node {
+    public:
+        int data;
+        Node* next;
+};
+
+Node* traverse(Node* head){
+    Node* ptr = head;
+    while(ptr != NULL){
+        cout<<ptr->data<<" ";
+        ptr = ptr->next;
+    }
+    return head;
+}
+
+Node* reverse(Node* head){
+    Node* prevNode;
+    Node* currentNode;
+    Node* nextNode;
+    prevNode = NULL;
+
+    currentNode = nextNode = head;
+
+    while(nextNode != NULL){
+        nextNode = nextNode->next;
+        currentNode->next = prevNode;
+        prevNode = currentNode;
+        currentNode = nextNode;
+    }
+    prevNode = head;
+    return head;
+
+}
+
+int main(){
+    Node* head = NULL;
+    Node* n2 = NULL;
+    Node* n3 = NULL;
+    Node* n4 = NULL;
+
+    head = new Node();
+    n2= new Node();
+    n3= new Node();
+    n4= new Node();
+
+    head->data=34;
+    head->next= n2;
+    
+    n2->data= 37;
+    n2->next=n3;
+
+    n3->data=56;
+    n3->next = n4;
+
+    n4->data=9;
+    n4->next= NULL;
+
+     head = traverse(head);
+     reverse(head);
+    return 0;
+
+
+}
