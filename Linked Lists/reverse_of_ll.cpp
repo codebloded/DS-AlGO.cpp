@@ -17,13 +17,14 @@ Node* traverse(Node* head){
     return head;
 }
 
+//Function for reverse the nodes in linked list
 Node* reverse(Node* head){
     Node* prevNode;
     Node* currentNode;
     Node* nextNode;
     prevNode = NULL;
 
-    currentNode = nextNode = head;
+    currentNode = nextNode = head;//Initially our these pointer is at starting same as head.
 
     while(nextNode != NULL){
         nextNode = nextNode->next;
@@ -31,7 +32,7 @@ Node* reverse(Node* head){
         prevNode = currentNode;
         currentNode = nextNode;
     }
-    prevNode = head;
+    head = prevNode;
     return head;
 
 }
@@ -59,8 +60,8 @@ int main(){
     n4->data=9;
     n4->next= NULL;
 
-     head = traverse(head);
-     reverse(head);
+    head = reverse(head);
+     traverse(head);
     return 0;
 
 

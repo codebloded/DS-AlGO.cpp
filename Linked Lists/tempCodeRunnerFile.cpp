@@ -1,1 +1,1 @@
-i
+    if(head != NULL){
