@@ -1,1 +1,1 @@
-    if(head != NULL){
+fast
