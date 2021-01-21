@@ -61,7 +61,7 @@ int main(){
     n4->next= NULL;
 
     head = reverse(head);
-     traverse(head);
+    traverse(head);
     return 0;
 
 
