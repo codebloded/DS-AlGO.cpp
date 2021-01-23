@@ -62,8 +62,27 @@ StackNode* linkedList_traversal(StackNode* top){
     return top;
 }
 
+int stackTop(StackNode** top){
+        return (*top)->data;
+}
 
-
+int stackBottom(StackNode** top){
+    StackNode* n = *top;
+    while(n->next != NULL){
+        n = n->next;
+    }
+    return n->data;
+}
+int peek(StackNode* top , int pos){
+    StackNode* temp = top;
+    for(int i=0; (i<pos-1 && temp != NULL); i++){
+        temp = temp->next;
+    }
+    if(temp != NULL){
+        return temp->data;
+    }
+    return -1;
+}
 
 int main(){
     StackNode* top = NULL;
@@ -76,6 +95,9 @@ int main(){
     int element = pop(&top);
     cout<<element<<" is popped"<<endl;
     linkedList_traversal(top);
+    cout<<stackBottom(&top)<<endl;
+    cout<<stackTop(&top)<<endl;
+    cout<<peek(top,2);
 
     return 0;
-}
+} 
