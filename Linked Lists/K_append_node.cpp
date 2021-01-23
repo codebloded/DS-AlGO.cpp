@@ -46,8 +46,6 @@ Node* Kappend_node(Node* head , int k){
         newTail->next = NULL;
         tail->next = head;
         return newHead;
-
-
 }
 
 

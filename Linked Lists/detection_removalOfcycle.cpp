@@ -42,6 +42,7 @@ void display(Node *&head)
     cout << "-NULL" << endl;
 }
 
+//Function for make a cycle in a linked list
 void makeCycle(Node *&head, int pos)
 {
     int count = 0;
@@ -51,7 +52,7 @@ void makeCycle(Node *&head, int pos)
     {
         if (count == pos)
         {
-            startCycle = temp;
+            startCycle = temp; //initialize the pointer equal to the temp .from where the cycle starts
         }
         temp = temp->next;
         count++;
@@ -59,6 +60,7 @@ void makeCycle(Node *&head, int pos)
     temp->next = startCycle;
 }
 
+//Function for detection of cycle in a linked list 
 bool detect_cycle(Node *&head)
 {
     Node *slow = head;
@@ -70,12 +72,13 @@ bool detect_cycle(Node *&head)
         fast = fast->next->next;
         if (fast == slow)
         {
-            return true;
+            return true; //here we found that the cycle is present in our linked list
         }
     }
     return false;
 }
 
+//Function for remove the cycle ,if present.!
 void remove_cycle(Node *&head)
 {
     Node *slow = head;
@@ -106,7 +109,7 @@ int main()
     }
     display(head);
 //Make cylce
-    makeCycle(head, 4);
+    makeCycle(head, 4); 
 //removing the cycle
     remove_cycle(head);
 //detection of cycle
