@@ -1,3 +1,4 @@
+//Implementation of Stack data structure using Arrays
 #include <iostream>
 #include <stack>
 using namespace std;
@@ -18,11 +19,23 @@ public:
     int pop();
     bool isEmpty();
     int peek(int pos);
+    int stackTop();
+    int stackBottom();
 };
 
 bool Stack::isEmpty()
 {
     return (top < 0);
+}
+
+int Stack::stackBottom()
+{
+    return stack[0];
+}
+
+int Stack::stackTop()
+{
+    return stack[top];
 }
 
 bool Stack::push(int val)
@@ -88,6 +101,22 @@ int main()
     {
         cout << s.peek(i) << " position is " << i << endl;
     }
+    cout << "The value of Top most  element is : " << s.stackTop() << endl;
+    cout << "The value of bottom most element is: " << s.stackBottom() << endl;
+
+    /*
+            NOTE:
+                Time complexities:
+                        push() --> O(1)
+                        pop()  --> O(1)
+                        isEmpty()  --> O(1)
+                        isFull()  --> O(1)
+                        stackTop()  --> O(1)
+                        stackBottom()  --> O(1)
+
+
+                O(1)-->Constant Time required to do operations..!
+    */
 
     return 0;
 }
