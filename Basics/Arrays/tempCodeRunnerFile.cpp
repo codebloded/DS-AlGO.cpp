@@ -1,3 +1,2 @@
 
-    while (i < m && j < n)
-    {
+    int start = 0;
