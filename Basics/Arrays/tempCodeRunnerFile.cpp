@@ -1,1 +1,2 @@
-for (int i = 1; i <= n; i++) 
+ciel = arr[low];
+            // floor = arr[high];
