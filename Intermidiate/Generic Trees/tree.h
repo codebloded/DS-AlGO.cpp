@@ -36,29 +36,3 @@ Node *construct(vector<int> arr)
     }
     return root;
 }
-
-int height(Node *node)
-{
-    int h = -1; // -1 is for base case because we want to find height in term of edges i.e No.edges
-    for (Node *child : node->children)
-    {
-        int ch = height(child);
-        h = max(ch, h);
-    }
-    return h + 1;
-}
-
-int main()
-{
-    int size;
-    cin >> size;
-    vector<int> arr(size);
-    for (int i = 0; i < size; i++)
-    {
-        cin >> arr[i];
-    }
-
-    Node *root = construct(arr);
-    cout << height(root);
-    return 0;
-}

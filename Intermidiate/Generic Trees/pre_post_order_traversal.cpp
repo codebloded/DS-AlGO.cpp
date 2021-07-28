@@ -37,15 +37,16 @@ Node *construct(vector<int> arr)
     return root;
 }
 
-int height(Node *node)
+void traverse(Node *node)
 {
-    int h = -1; // -1 is for base case because we want to find height in term of edges i.e No.edges
+    cout << "Node Pre " << node->data << endl;
     for (Node *child : node->children)
     {
-        int ch = height(child);
-        h = max(ch, h);
+        cout << "Edge Pre " << node->data << "--" << child->data << endl;
+        traverse(child);
+        cout << "Edge Post " << node->data << "--" << child->data << endl;
     }
-    return h + 1;
+    cout << "Node Post " << node->data << endl;
 }
 
 int main()
@@ -59,6 +60,6 @@ int main()
     }
 
     Node *root = construct(arr);
-    cout << height(root);
+    traverse(root);
     return 0;
 }
