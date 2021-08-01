@@ -17,6 +17,7 @@ void zigzag(Node *node)
         {
             cout << temp->data << " ";
 
+            //loops for adding child nodes into the child
             if (level % 2 == 1)
             {
                 for (int i = 0; i < temp->children.size(); i++)
