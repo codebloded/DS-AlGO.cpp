@@ -1,12 +1,6 @@
 #include <bits/stdc++.h>
+#include "tree.h";
 using namespace std;
-
-class Node
-{
-public:
-    int data;
-    vector<Node *> children;
-};
 
 Node *construct(vector<int> arr)
 {
