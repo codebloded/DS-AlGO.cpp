@@ -16,9 +16,9 @@ public:
     }
 };
 
-Node *construct(vector<int> &arr)
+Node *construct(int *arr)
 {
-    Node *root = new Node(arr.at(0));
+    Node *root = new Node(arr[0]);
     pair<Node *, int> p = {root, 1};
 
     stack<pair<Node *, int>> st;
@@ -30,9 +30,9 @@ Node *construct(vector<int> &arr)
         if (st.top().second == 1)
         {
             st.top().second++;
-            if (arr.at(idx) != -1)
+            if (arr[idx] != -1)
             {
-                st.top().first->left = new Node(arr.at(idx));
+                st.top().first->left = new Node(arr[idx]);
                 pair<Node *, int> lp = {st.top().first->left, 1};
                 st.push(lp);
             }
@@ -45,10 +45,10 @@ Node *construct(vector<int> &arr)
         else if (st.top().second == 2)
         {
             st.top().second++;
-            if (arr.at(idx) != -1)
+            if (arr[idx] != -1)
             {
-                st.top().first->right = new Node(arr.at(idx));
-                pair<Node *, int> rp = {st.top().first->right, 2};
+                st.top().first->right = new Node(arr[idx]);
+                pair<Node *, int> rp = {st.top().first->right, 1};
                 st.push(rp);
             }
             else
