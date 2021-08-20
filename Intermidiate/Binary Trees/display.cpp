@@ -27,10 +27,21 @@ int main()
     vector<int> arr(size);
     for (int i = 0; i < size; i++)
     {
-        cin >> arr.at(i);
+        string x;
+        cin >> x;
+
+        if (x == "n")
+        {
+            arr.at(i) = -1;
+        }
+        else
+        {
+            arr.at(i) = stoi(x);
+        }
     }
     Node *root = construct(arr);
     display(root);
 
     return 0;
 }
+//50 25 12 n n 37 30 n n n 75 62 n 70 n n 87 n n
