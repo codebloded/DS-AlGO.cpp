@@ -22,24 +22,23 @@ void display(Node *node)
 
 int main()
 {
-    int size;
-    cin >> size;
-    vector<int> arr(size);
-    for (int i = 0; i < size; i++)
+    int n;
+    cin >> n;
+    int v[n];
+    for (int i = 0; i < n; i++)
     {
         string x;
         cin >> x;
-
         if (x == "n")
         {
-            arr.at(i) = -1;
+            v[i] = -1;
         }
         else
         {
-            arr.at(i) = stoi(x);
+            v[i] = stoi(x);
         }
     }
-    Node *root = construct(arr);
+    Node *root = construct(v);
     display(root);
 
     return 0;
